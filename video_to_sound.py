@@ -3,11 +3,12 @@ import time
 from moviepy.editor import *
 
 start_time = time.time()
-target_dir = "E:\迅雷下载\恋词真题5500（原绿皮书）\纯音频文件"
+target_dir = "path_to_save"
+path_to_walk = "path_to_convert"
 all_files_name = []
-for a, b, c in os.walk("E:\迅雷下载\恋词真题5500（原绿皮书）\纯音频文件"):
+for a, b, c in os.walk(target_dir):
     all_files_name += c
-for root, dirs, files in os.walk("E:\迅雷下载\恋词真题5500（原绿皮书）\大黄《考研英语真题5500词》配套视频"):
+for root, dirs, files in os.walk(path_to_walk):
     for i in files:
         if i.replace(".mp4", ".mp3") not in all_files_name:
             print(os.path.join(target_dir, os.path.basename(root), os.path.splitext(i)[0]+".mp3"))
