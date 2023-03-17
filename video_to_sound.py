@@ -19,7 +19,6 @@ for root, dirs, files in os.walk(path_to_walk):
             if not os.path.exists(os.path.join(target_dir, os.path.basename(root))):
                 os.makedirs(os.path.join(target_dir, os.path.basename(root)))
             audio.write_audiofile(os.path.join(target_dir, os.path.basename(root), os.path.splitext(i)[0]+".mp3"))
-# root, dirs, files = os.walk("E:\迅雷下载\恋词真题5500（原绿皮书）\大黄《考研英语真题5500词》配套视频\L1")
 end_time = time.time()
 used_time = end_time-start_time
 print(time.asctime(time.localtime(used_time)))
